@@ -31,16 +31,13 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
         //     $('#cboxLoadedContent').find('.vote-btn input[type=checkbox]').prop('checked', true).siblings(".cbox-cover").toggleClass("sp-check sp-checked");;
         //   }
 
-<<<<<<< HEAD
         //     $('#cboxLoadedContent .container').mCustomScrollbar();
 
         // }
-=======
             $('#cboxLoadedContent .container').mCustomScrollbar();
             ga('send', 'pageview', $(this).attr('href'));
-          
+
         }
->>>>>>> d67d006dcd29fa8e7a50d623a1d540b04887bab3
         function relayout(){
             $('#spacer').css('paddingTop', win.h - $('#section1').height());
         }
@@ -284,11 +281,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
             if ( $("body").find("#colorbox").length > 0 ) {
               $("#cboxClose").append("<span class=\"sp-l sp-mall-close\"></span>");
             }
-<<<<<<< HEAD
-
-=======
           }, 0);
->>>>>>> d67d006dcd29fa8e7a50d623a1d540b04887bab3
         });
 
 
