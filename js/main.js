@@ -34,10 +34,10 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
         //     $('#cboxLoadedContent .container').mCustomScrollbar();
 
         // }
-            $('#cboxLoadedContent .container').mCustomScrollbar();
-            ga('send', 'pageview', $(this).attr('href'));
+        //     $('#cboxLoadedContent .container').mCustomScrollbar();
+        //     ga('send', 'pageview', $(this).attr('href'));
 
-        }
+        // }
         function relayout(){
             $('#spacer').css('paddingTop', win.h - $('#section1').height());
         }
@@ -281,7 +281,6 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
             if ( $("body").find("#colorbox").length > 0 ) {
               $("#cboxClose").append("<span class=\"sp-l sp-mall-close\"></span>");
             }
-          }, 0);
         });
 
 
