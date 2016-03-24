@@ -30,6 +30,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           }
 
             $('#cboxLoadedContent .container').mCustomScrollbar();
+            ga('send', 'pageview', $(this).attr('href'));
           
         }
         function relayout(){
@@ -96,6 +97,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           showMall: function () {
             $('body').addClass('showmall');
             $('#mallOverlay').fadeIn(400, function(){kc.goToFloor(0);});
+            // ga('send', 'pageview', '/mall-g');
             // $('#mallContent .layers').slick({
             //   vertical: true,
             //   verticalSwiping: true,
@@ -204,6 +206,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
               }, 100);
             }, t);
             $('#cur_floor').text(((f == '0')? 'G' : f) + '/F');
+            ga('send', 'pageview', '/mall-'+((f == '0')? 'g' : f));
             $('#choose_floor .f'+f).addClass('on').siblings('.on').removeClass('on');
             if(f >= 3){
               $('#levelup').addClass('dim');
@@ -275,7 +278,6 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
               $("#cboxClose").append("<span class=\"sp sp-close\"></span>");
             }
           }, 0);
-          
         });
         
         
