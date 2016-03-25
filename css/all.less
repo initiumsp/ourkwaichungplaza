@@ -437,15 +437,9 @@ input[type=checkbox], .cbox-cover {
   display: inline-block;
 }
 .lightbox-content {
-  background: url(../images/pat.jpg);
-  min-height: 730px;
-  overflow: hidden;
-  // min-height: 630px;
   h1 {
     text-align: center;
-    position: absolute;
-    top: 53px;
-    left: 93px;
+    
     z-index: 1;
     font-size: 23px;
   }
@@ -467,7 +461,6 @@ input[type=checkbox], .cbox-cover {
     display: block;
     max-width: 100%;
     margin: 0 auto 15px;
-    border-radius: 4px;
   }
   .img + .img-caption {
     color: #4e595d;
@@ -478,13 +471,13 @@ input[type=checkbox], .cbox-cover {
     line-height: 1.4em;
   }
   .container {
-    position: absolute;
-    top: 100px;
-    left: 92px;
-    right: 35px;
-    bottom: 37px;
-    overflow: auto;
-    padding-right: 55px;
+    // position: absolute;
+    // top: 100px;
+    // left: 92px;
+    // right: 35px;
+    // bottom: 37px;
+    // overflow: auto;
+    // padding-right: 55px;
   }
   .links {
     h4 {
@@ -669,41 +662,102 @@ img.map, map area{
   .sp{
     background-image: url(../images/d/sp.png);
   }
+  .sp-1f {
+    width: 125px;
+    height: 50px;
+    background-position: -1px -1px;
+  }
+
+  .sp-1f-on {
+      width: 125px;
+      height: 50px;
+      background-position: -128px -1px;
+  }
+
+  .sp-2f {
+      width: 125px;
+      height: 50px;
+      background-position: -1px -53px;
+  }
+
+  .sp-2f-on {
+      width: 125px;
+      height: 50px;
+      background-position: -128px -53px;
+  }
+
+  .sp-3f {
+      width: 125px;
+      height: 50px;
+      background-position: -1px -105px;
+  }
+
+  .sp-3f-on {
+      width: 125px;
+      height: 50px;
+      background-position: -128px -105px;
+  }
+
   .sp-arrow-next {
       width: 46px;
       height: 46px;
-      background-position: -1px -1px;
+      background-position: -1px -157px;
   }
 
   .sp-arrow-prev {
       width: 46px;
       height: 46px;
-      background-position: -49px -1px;
+      background-position: -49px -157px;
+  }
+
+  .sp-base {
+      width: 7px;
+      height: 174px;
+      background-position: -255px -1px;
+  }
+
+  .sp-gf {
+      width: 125px;
+      height: 50px;
+      background-position: -97px -157px;
+  }
+
+  .sp-gf-on {
+      width: 125px;
+      height: 50px;
+      background-position: -1px -209px;
+  }
+
+  .sp-lb-close {
+      width: 44px;
+      height: 44px;
+      background-position: -128px -209px;
   }
 
   .sp-scrolldown {
       width: 27px;
       height: 12px;
-      background-position: -1px -49px;
+      background-position: -224px -157px;
   }
 
   .sp-tip {
       width: 51px;
       height: 67px;
-      background-position: -30px -49px;
+      background-position: -264px -1px;
   }
 
   .sp-tip2 {
       width: 51px;
       height: 67px;
-      background-position: -97px -1px;
+      background-position: -264px -70px;
   }
 
   .sp-video {
       width: 66px;
       height: 34px;
-      background-position: -83px -70px;
+      background-position: -224px -177px;
   }
+
   .tips a:hover, a.on{
     .sp-tip{
       .sp-tip2;
@@ -894,11 +948,12 @@ img.map, map area{
       right: -75px;
     }
   }
-  #colorbox, #cboxWrapper, #cboxContent, #cboxLoadedContent {
-    min-width: 600px !important;
-    width: 600px !important;
-    max-width: 600px !important;
-    margin-left: 140px;
+  #cboxClose{
+    .sp;
+    .sp-lb-close;
+  }
+  #cboxLoadedContent{
+    padding: 46px 0;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1200px) {
@@ -1254,9 +1309,6 @@ img.map, map area{
     h1 {
       top: 4px;
       left: 12px;
-      img {
-        width: 332/2px;
-      }
     }
     h4 {
       margin: 6px 0;
