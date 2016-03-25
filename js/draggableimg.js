@@ -22,8 +22,8 @@
 
     var imageDimensions = { width: 0, height: 0 };
 
-    imageDimensions.width = $el.find('img').width();
-    imageDimensions.height = $el.find('img').height();
+    imageDimensions.width = $el.find('img').width() + 50;
+    imageDimensions.height = $el.find('img').height() + 50;
     return imageDimensions;
   };
 
@@ -73,13 +73,13 @@
         var x = e.clientX,
             y = e.clientY;
   
-        xPos = options.axis === 'y' ? xPos : limit($el.innerWidth()-imageDimensions.width, 0, xPos+x-x0, options.bound);
-        yPos = options.axis === 'x' ? yPos : limit($el.innerHeight()-imageDimensions.height, 0, yPos+y-y0, options.bound);
+        xPos = options.axis === 'y' ? xPos : limit($el.innerWidth()-imageDimensions.width, 50, xPos+x-x0, options.bound);
+        yPos = options.axis === 'x' ? yPos : limit($el.innerHeight()-imageDimensions.height, 50, yPos+y-y0, options.bound);
          if($el.innerWidth() > imageDimensions.width){
-           xPos = 0;
+           xPos = 50;
          }
          if($el.innerHeight() > imageDimensions.height){
-           yPos = 0;
+           yPos = 50;
          }
       
         x0 = x;

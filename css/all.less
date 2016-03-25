@@ -317,6 +317,11 @@ body.loaded{
     opacity: 1;
   }
 }
+html.noscroll{
+  &, body{
+    overflow: hidden;
+  }
+}
 #section3{
   // margin-bottom: 1.5em;
     margin-bottom: 46px;
@@ -592,6 +597,9 @@ input[type=checkbox], .cbox-cover {
         z-index: 1;
       }
     }
+    .slick-track{
+      margin: 0 auto;
+    }
     .dbg{
       .transform(scale(0.2));
       .transition(all 800ms cubic-bezier(0.165, 0.84, 0.44, 1));
@@ -605,7 +613,7 @@ input[type=checkbox], .cbox-cover {
   .bot{
     position: absolute;
     // bottom: 0;
-    bottom: 22px;
+    bottom: 10px;
     .ajax-lbox{
       border: 2px solid #fff;
     }
@@ -791,6 +799,7 @@ img.map, map area{
 
     }
   }
+
   #section1 {
         max-width: 480px;
         margin-left: auto;
@@ -951,6 +960,7 @@ img.map, map area{
     }
     .bot{
       left: 50%;
+      bottom: 22px;
       margin-left: -345px;
       width: 690px;
       .ajax-lbox{
@@ -1180,13 +1190,13 @@ img.map, map area{
   }
   .content{
     padding: 0 30px;
-    max-width: none;
   }
   .content1{
     max-width: 300px;
     padding: 14px 10px;
   }
   .cover{
+    padding: 0 20px;
     h1 {
       font-size: 20px;
       margin-bottom: 6px;
@@ -1350,6 +1360,7 @@ img.map, map area{
     }
   }
   .lightbox-content {
+    padding: 60px 0 20px;
     min-height: 400px;
     h1 {
       top: 4px;
@@ -1364,45 +1375,22 @@ img.map, map area{
       font-size: 13px;
       letter-spacing: 1px;
     }
-    .img {
-      // max-width: 100%;
-      max-width: 95%;
+    .share{
+      position: absolute;
+      top: 10px;
+      left: 20px;
     }
-    .container {
-      top: 30px;
-      left: 30px;
-      right: 15px;
-      bottom: 75px;
-    }
-    .links a {
-      line-height: 1.4;
-      display: inline-block;
-      margin-bottom: 2px;
-      &:active{
-        color: #5aaaca;
-      }
-    }
-    .box-bottom {
-      height: 75px;
-      right: 15px;
-      // right: 6px;
-      a, .vote-btn {
-        margin-left: 2px;
-        margin-right: 2px;
-      }
-      a {
-        margin-top: (75-26)/2px;
-      }
-      .vote-btn {
-        margin-top: (75-38)/2px;
-      }
+    .content{
+      padding: 0;
     }
   }
   #cboxClose {
     height: 38px;
     width: 38px;
-    top: -38/2px;
-    right: -38/2px;
+    top: 13px;
+    right: 20px;
+    .sp;
+    .sp-lb-close;
   }
   #credits{
     border: 0;
@@ -1452,6 +1440,9 @@ img.map, map area{
       margin-bottom: 20px;
       line-height: 1.5;
     }
+    .wrapper{
+      display: block;
+    }
   }
   .back-to-top {
     position: relative;
@@ -1476,6 +1467,10 @@ img.map, map area{
     }
     .header{
       position: relative;
+      h2{
+        text-align: left;
+        padding-top: 17px;
+      }
     }
     .layers, #current_floor{
       position: absolute;
@@ -1535,7 +1530,6 @@ img.map, map area{
     }
     img{
       width: 114px;
-      height: 76px;
     }
   }
   #current_floor figure, #floorplan{
