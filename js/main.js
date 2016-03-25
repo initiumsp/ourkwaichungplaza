@@ -45,18 +45,18 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
             n = mCoords.length;
             hdc.beginPath();
             hdc.moveTo(mCoords[0], mCoords[1]);
-            m1 = Math.max(m1, mCoords[0]);
-            m2 = Math.max(m2, mCoords[1]);
+            m1 = parseFloat(mCoords[0]);
+            m2 = parseFloat(mCoords[1]);
             for (i=2; i<n; i+=2)
             {
                 hdc.lineTo(mCoords[i], mCoords[i+1]);
-                m1 = Math.max(m1, mCoords[i]);
-                m2 = Math.max(m2, mCoords[i+1]);
+                m1 += parseFloat(mCoords[i]);
+                m2 += parseFloat(mCoords[i+1]);
             }
             hdc.lineTo(mCoords[0], mCoords[1]);
             hdc.stroke();
             hdc.fill();
-            if(adjust) $curfloor.find('.dbg-container').stop(1, 1).animate({'left': win.w / 2 - m1+'px', 'top': win.h / 2 - m2+'px'}, 600);
+            if(adjust) $curfloor.find('.dbg-container').stop(1, 1).animate({'left': win.w / 2 - m1/(n/2)+'px', 'top': win.h / 2 - m2/(n/2)+'px'}, 600);
         }
         var kc = {
           loaded: function(){
