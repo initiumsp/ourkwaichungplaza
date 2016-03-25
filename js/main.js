@@ -204,7 +204,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
                 $('#mallContent .bot').slick({
                   slidesToShow: ((mode == 'm')? 3 : 4),
                   slidesToScroll: 3,
-                  centerMode: ((mode == 'm')? false : true),
+                  centerMode: false,
                   prevArrow: '<a href="#" class="slick-prev"><span class="sp sp-arrow-prev"></span></a>',
                   nextArrow: '<a href="#" class="slick-next"><span class="sp sp-arrow-next"></span></a>'
                 });
