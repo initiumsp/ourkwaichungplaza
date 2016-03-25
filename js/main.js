@@ -1,6 +1,6 @@
-define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquery.colorbox-min","draggableimg", "scrollreveal", "slick.min" ,"jquery.scrollTo.min"], function($) {
+define(["jquery", "md", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquery.colorbox-min", "draggableimg", "scrollreveal", "slick.min" ,"jquery.scrollTo.min"], function($, MobileDetect) {
   $(function(){
-      var mode = 'd', offset = 100, win = {w: 0, h: 0}, can, hdc, img_scale=1, $curfloor, curfloor =0;
+      var mode = 'd', offset = 100, win = {w: 0, h: 0}, can, hdc, img_scale=1, $curfloor, curfloor =0, md = new MobileDetect(window.navigator.userAgent), touch = (md.mobile() || md.tablet());
 
       $(document).ready(function() {
 
@@ -16,7 +16,6 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           });
         }
         function lbox_init() {
-          // alert('yo');
           if (mode == 'd') {
              $(".ajax-lbox").colorbox({width:"100%", height:"80%", maxWidth: 800, onComplete: lbox_onload});
             //$(".ajax-lbox").colorbox({width:"600px", maxheight:"80%" });
@@ -27,7 +26,6 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
 
         }
         function lbox_onload(){
-          // alert('loaded');
           $('#cboxLoadedContent meta').remove();
           $('#cboxLoadedContent script').remove();
 
@@ -77,7 +75,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
             relayout();
             $('body').addClass('loaded');
             $curfloor = $('#current_floor');
-            kc.showMall();
+            // kc.showMall();
             $(document).bind('cbox_open', function () {
               // kc.top = $('body').scrollTop();
               // alert(kc.top);
@@ -88,7 +86,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           }); 
           },
           scrollTo: function(top){
-            if(mode == 'd'){
+            if(!touch){
               $('#main-container').mCustomScrollbar("scrollTo",function(){
                 return top;
               });
@@ -124,6 +122,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           hideMall: function () {
               $('body').removeClass('showmall');
             $('#mallOverlay').fadeOut();
+            $('#current_floor').removeClass('active');
           },
           fpinit: function (){
             // get the target image
@@ -167,11 +166,14 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
               });
               img_scale = 1;
             }
-            if(mode != 'm'){
+            if(!touch){
               $('#current_floor .area').hover(function(e){kc.highlight($(e.target), 0);},kc.resetHighlight);
               $('#current_floor .bot a, #current_floor .tips a').hover(function(e){kc.highlight($curfloor.find('area.'+$(this).data('ref')), 1);},kc.resetHighlight);
             }
             else{
+              $('#current_floor').find('.dbg-container').css({
+                'left':-266
+              })
             $('#current_floor .area').on('mousedown touchstart', function(e) {
               e.stopPropagation();
               kc.highlight($(e.target), 0);}).on('mouseup touchend mouseleave', function(e) {e.stopPropagation();kc.resetHighlight();});
@@ -198,7 +200,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
             curfloor = parseInt(f);
             if($('#current_floor').hasClass('active')){
               $('#current_floor').removeClass('active');
-              t = 800;
+              t = 200;
             }
             setTimeout(function(){
 
@@ -319,7 +321,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
         });
         kc.loaded();
 
-        if(mode !='m'){
+        if(!touch){
           window.sr = ScrollReveal();
           if (sr.isSupported() ) {
             $('body').addClass('sr');

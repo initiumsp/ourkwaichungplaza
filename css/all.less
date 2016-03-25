@@ -238,21 +238,24 @@ header {
       float: right;
   }
 }
-#twitter {
-    padding: 1px 10px;
-    img{
-          width: 16px;
-    height: auto;
-    }
-}
+.share{
 
-#facebook {
-    position: relative;
-    padding: 2px 10px 0 8px;
-    img{
-          width: auto;
-    height: 18px;
-    }
+  .tt-share {
+      padding: 1px 10px;
+      img{
+            width: 16px;
+      height: auto;
+      }
+  }
+
+  .fb-share {
+      position: relative;
+      padding: 2px 10px 0 8px;
+      img{
+            width: auto;
+      height: 18px;
+      }
+  }
 }
 #menu{
   position: relative;
@@ -764,25 +767,11 @@ img.map, map area{
     }
   }
   body.tc{
-    .sp-l {
-      background-image: url(../images/d/sp_tc.png);
-    }
-    .sp-lv-down {
-        width: 76px;
-        height: 81px;
-        background-position: -1px -1px;
-    }
-
-    .sp-lv-up {
-        width: 76px;
-        height: 81px;
-        background-position: -79px -1px;
-    }
 
     .sp-mall-close {
         width: 111px;
         height: 37px;
-        background-position: -1px -84px;
+        background: url(../images/d/mall-close-tc.png) no-repeat 0 0;
     }
 
     .lightbox-content .links a:hover{
@@ -790,8 +779,10 @@ img.map, map area{
     }
   }
   body.sc{
-    .sp{
-      background-image: url(../images/d/sp-sc.png);
+    .sp-mall-close {
+        width: 111px;
+        height: 37px;
+        background: url(../images/d/mall-close-sc.png) no-repeat 0 0;
     }
 
     .lightbox-content .links a:hover{
@@ -1159,14 +1150,41 @@ img.map, map area{
 
   }
   body.sc{
-    //.sp-l {
-    //   background-image: url(../images/m/sp_sc.png);
-    //   background-size: 83px 513px;
-    //}
+    .sp-l {
+       background-image: url(../images/m/sp_sc.png);
+       background-size: 59px 230px;
+    }
+    .sp-lv-down {
+      width: 59px;
+      height: 73px;
+      background-position: 0 -0px;
+    }
+
+    .sp-lv-up {
+      width: 58px;
+      height: 73px;
+      background-position: 0 -73px;
+    }
+
+    .sp-mall-close {
+      width: 56px;
+      height: 51px;
+      background-position: 0 -146px;
+    }
+
+    .sp-totop {
+      width: 51px;
+      height: 33px;
+      background-position: 0 -197px;
+    }
+
   }
   #main-container, #menu{
     .transition(all 800ms cubic-bezier(0.165, 0.84, 0.44, 1));
   }
+  // #main-container{
+  //   overflow-x: hidden;
+  // }
   #menu{
     width: 100%;
     max-width: none;
@@ -1295,10 +1313,10 @@ img.map, map area{
             margin: 5px auto;
           }
         }
-    }
-    #twitter{
-      padding-left: 8px;
-      padding-right: 8px;
+      .tt-share{
+        padding-left: 8px;
+        padding-right: 8px;
+      }
     }
   }
   #m_nav{
@@ -1352,6 +1370,20 @@ img.map, map area{
     padding: 0 20px;
   }
   #section1 {
+    // &:before{
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: -500px;
+    //   right: -500px;
+    //   background: url(../images/strip.png) repeat-x 0 100%;
+    //   height: 355px;
+
+    //   content: '';
+    // }
+    h1{
+      text-shadow: 0 0 20px rgba(255,255,255, 0.7);
+    }
+    // h1, p, a{position: relative;}
     // margin-top: -270px;
     .author {
       font-weight: 200;
@@ -1440,14 +1472,16 @@ img.map, map area{
       margin-bottom: 20px;
       line-height: 1.5;
     }
-    .wrapper{
+    .wrapper, .centered{
       display: block;
     }
   }
   .back-to-top {
+    display: block;
     position: relative;
     right: auto;
     bottom: auto;
+    margin: 0 auto;
   }
   #videoLb{
     width: 90%;
@@ -1463,7 +1497,7 @@ img.map, map area{
     }
     .mall_close{
       top: 20px;
-      right: 15px;
+      right: 0px;
     }
     .header{
       position: relative;
@@ -1529,7 +1563,7 @@ img.map, map area{
       margin: 0 7px;
     }
     img{
-      width: 114px;
+      // width: 114px;
     }
   }
   #current_floor figure, #floorplan{
