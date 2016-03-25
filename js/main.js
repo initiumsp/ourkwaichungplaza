@@ -16,28 +16,24 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           });
         }
         function lbox_init() {
-          if ($(document).width() > 767) {
-            // $(".ajax-lbox").colorbox({width:"50%", maxheight:"80%", maxWidth: 800, onComplete: lbox_onload});
-            $(".ajax-lbox").colorbox({width:"600px", maxheight:"80%" });
+          alert('yo');
+          if (mode == 'd') {
+             $(".ajax-lbox").colorbox({width:"100%", height:"80%", maxWidth: 800, onComplete: lbox_onload});
+            //$(".ajax-lbox").colorbox({width:"600px", maxheight:"80%" });
           } else {
             // $(".ajax-lbox").colorbox({width:"90%", maxheight:"80%", maxWidth: 345, onComplete: lbox_onload});
-            $(".ajax-lbox").colorbox({width:"100%", height:"100%", maxheight:"80%" });
+            $(".ajax-lbox").colorbox({width:"100%", height:"100%", onComplete: lbox_onload });
           }
         }
-        // function lbox_onload(){
-        //   $('#cboxLoadedContent meta').remove();
-        //   $('#cboxLoadedContent script').remove();
-        //   if($(this).parents('.emoji:first').find('input[type=checkbox]').prop('checked')){
-        //     $('#cboxLoadedContent').find('.vote-btn input[type=checkbox]').prop('checked', true).siblings(".cbox-cover").toggleClass("sp-check sp-checked");;
-        //   }
+        function lbox_onload(){
+          alert('loaded');
+          $('#cboxLoadedContent meta').remove();
+          $('#cboxLoadedContent script').remove();
 
-        //     $('#cboxLoadedContent .container').mCustomScrollbar();
+          $('#cboxLoadedContent').mCustomScrollbar();
 
-        // }
-        //     $('#cboxLoadedContent .container').mCustomScrollbar();
-        //     ga('send', 'pageview', $(this).attr('href'));
-
-        // }
+          ga('send', 'pageview', $(this).attr('href'));
+        }
         function relayout(){
             $('#spacer').css('paddingTop', win.h - $('#section1').height());
         }
@@ -208,6 +204,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
                   prevArrow: '<a href="#" class="slick-prev"><span class="sp sp-arrow-prev"></span></a>',
                   nextArrow: '<a href="#" class="slick-next"><span class="sp sp-arrow-next"></span></a>'
                 });
+                lbox_init();
               }, 100);
             }, t);
             $('#cur_floor').text(((f == '0')? 'G' : f) + '/F');
@@ -224,9 +221,8 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
             }
           }
         };
-        lbox_init();
         $(window).resize(function(e){
-          lbox_init();
+          $.colorbox.resize();
         });
 
 
