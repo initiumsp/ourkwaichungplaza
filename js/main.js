@@ -299,6 +299,12 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           relayout();
         }).load(function(){
           kc.loaded();
+          if(window.location.hash) {
+            // Fragment exists
+            var hash = window.location.hash;
+            $('a.ajax-lbox[href="'+hash.substr(1)+'.html"]').first().click();
+            history.pushState(null,null,'#');
+          }
         });
         kc.loaded();
 
