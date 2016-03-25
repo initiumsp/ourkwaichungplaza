@@ -17,11 +17,11 @@ define(["jquery", "md", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", 
         }
         function lbox_init() {
           if (mode == 'd') {
-             $(".ajax-lbox").colorbox({width:"100%", height:"80%", maxWidth: 800, onComplete: lbox_onload});
+             $(".ajax-lbox").colorbox({width:"100%", height:"80%", maxWidth: 800, onComplete: lbox_onload, close: "<span class=\"sp-l sp-mall-close\"></span>"});
             //$(".ajax-lbox").colorbox({width:"600px", maxheight:"80%" });
           } else {
             // $(".ajax-lbox").colorbox({width:"90%", maxheight:"80%", maxWidth: 345, onComplete: lbox_onload});
-            $(".ajax-lbox").colorbox({width:"100%", height:"100%", fixed: true, onComplete: lbox_onload });
+            $(".ajax-lbox").colorbox({width:"100%", height:"100%", fixed: true, onComplete: lbox_onload, close: "<span class=\"sp-l sp-mall-close\"></span>"});
           }
 
         }
@@ -286,11 +286,11 @@ define(["jquery", "md", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", 
           kc.scrollTo($(href).position().top-offset);
 
         });
-        $(".ajax-lbox").bind("click", function(e){
-            if ( $("body").find("#colorbox").length > 0 ) {
-              $("#cboxClose").append("<span class=\"sp-l sp-mall-close\"></span>");
-            }
-        });
+        // $(".ajax-lbox").bind("click", function(e){
+        //     if ( $("body").find("#colorbox").length > 0 ) {
+        //       $("#cboxClose").append("<span class=\"sp-l sp-mall-close\"></span>");
+        //     }
+        // });
 
 
         $(window).resize(function(){
