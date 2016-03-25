@@ -7,30 +7,23 @@ define(["jquery", "md", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", 
 
         function showVideo(){
           $('#videoOverlay, #videoLb').fadeIn(400, function(){
-            //if(player) player.play();
           });
         }
         function hideVideo(){
           $('#videoOverlay, #videoLb').fadeOut(400, function(){
-            //if(player) player.pause();
           });
         }
         function lbox_init() {
           if (mode == 'd') {
-             $(".ajax-lbox").colorbox({width:"100%", height:"80%", maxWidth: 800, onComplete: lbox_onload, close: "<span class=\"sp-l sp-mall-close\"></span>"});
-            //$(".ajax-lbox").colorbox({width:"600px", maxheight:"80%" });
+             $(".ajax-lbox").colorbox({width:"100%", height:"80%", maxWidth: 800, onComplete: lbox_onload, close: "<span class=\"sp sp-lb-close\"></span>"});
           } else {
-            // $(".ajax-lbox").colorbox({width:"90%", maxheight:"80%", maxWidth: 345, onComplete: lbox_onload});
-            $(".ajax-lbox").colorbox({width:"100%", height:"100%", fixed: true, onComplete: lbox_onload, close: "<span class=\"sp-l sp-mall-close\"></span>"});
+            $(".ajax-lbox").colorbox({width:"100%", height:"100%", fixed: true, onComplete: lbox_onload, close: "<span class=\"sp sp-lb-close\"></span>"});
           }
 
         }
         function lbox_onload(){
           $('#cboxLoadedContent meta').remove();
           $('#cboxLoadedContent script').remove();
-
-          $('#cboxLoadedContent').mCustomScrollbar();
-
           ga('send', 'pageview', $(this).attr('href'));
         }
         function relayout(){
@@ -75,14 +68,11 @@ define(["jquery", "md", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", 
             relayout();
             $('body').addClass('loaded');
             $curfloor = $('#current_floor');
-            // kc.showMall();
+
             $(document).bind('cbox_open', function () {
-              // kc.top = $('body').scrollTop();
-              // alert(kc.top);
               $('html').addClass('noscroll');
           }).bind('cbox_closed', function () {
               $('html').removeClass('noscroll');
-              //$('body').scrollTo(kc.top, 0);
           }); 
           },
           scrollTo: function(top){
@@ -107,7 +97,6 @@ define(["jquery", "md", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", 
           showMall: function () {
             $('body').addClass('showmall');
             $('#mallOverlay').fadeIn(400, function(){kc.goToFloor(0);});
-            // ga('send', 'pageview', '/mall-g');
             // $('#mallContent .layers').slick({
             //   vertical: true,
             //   verticalSwiping: true,
