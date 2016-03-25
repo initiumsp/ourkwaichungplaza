@@ -329,11 +329,14 @@ body.loaded{
     margin-top: -52/2px;
   }
 }
+#floorplan {
+  cursor: pointer;
+}
 footer {
-  background: @footer-bg;
+  background: #ece7e4;
+  color: #2d2d2d;
   text-align: center;
   padding: 15px 0;
-    color: #fff;
   p {
     margin-bottom: 0;
     font-family: times;
@@ -441,13 +444,10 @@ input[type=checkbox], .cbox-cover {
   h1 {
     text-align: center;
     position: absolute;
-    top: 35px;
-    left: 25px;
+    top: 53px;
+    left: 93px;
     z-index: 1;
-    img {
-      display: block;
-      width: 262px;
-    }
+    font-size: 23px;
   }
   h2{
     line-height: 1.4;
@@ -465,7 +465,7 @@ input[type=checkbox], .cbox-cover {
   }
   .img {
     display: block;
-    max-width: 450px;
+    max-width: 100%;
     margin: 0 auto 15px;
     border-radius: 4px;
   }
@@ -479,11 +479,12 @@ input[type=checkbox], .cbox-cover {
   }
   .container {
     position: absolute;
-    top: 90px;
-    left: 60px;
-    right: 20px;
-    bottom: 100px;
+    top: 100px;
+    left: 92px;
+    right: 35px;
+    bottom: 37px;
     overflow: auto;
+    padding-right: 55px;
   }
   .links {
     h4 {
@@ -614,7 +615,8 @@ input[type=checkbox], .cbox-cover {
   }
   .bot{
     position: absolute;
-    bottom: 0;
+    // bottom: 0;
+    bottom: 22px;
     .ajax-lbox{
       border: 2px solid #fff;
     }
@@ -892,6 +894,12 @@ img.map, map area{
       right: -75px;
     }
   }
+  #colorbox, #cboxWrapper, #cboxContent, #cboxLoadedContent {
+    min-width: 600px !important;
+    width: 600px !important;
+    max-width: 600px !important;
+    margin-left: 140px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1200px) {
 
@@ -978,7 +986,7 @@ img.map, map area{
     height: 13px;
     background-position: 0 -263px;
   }
-.tips a:active .sp-tip{
+  .tips a:active .sp-tip{
     .sp-tip2;
   }
   body{
@@ -1209,6 +1217,10 @@ img.map, map area{
       background: #ccc;
       margin: 0 auto 30px;
     }
+    .video-link img {
+      width: 142px;
+      height: 80px;
+    }
   }
   #menu_close{
     line-height: 41px;
@@ -1296,11 +1308,16 @@ img.map, map area{
     right: -38/2px;
   }
   #credits{
+    border: 0;
+    margin-top: 55px;
     .content{
       // padding: 0 55px;
       padding: 0;
     }
     .makingof {
+      img {
+        width: 100%;
+      }
       p {
         padding: 0 30px;
         box-sizing: border-box;
@@ -1338,6 +1355,11 @@ img.map, map area{
       margin-bottom: 20px;
       line-height: 1.5;
     }
+  }
+  .back-to-top {
+    position: relative;
+    right: auto;
+    bottom: auto;
   }
   #videoLb{
     width: 90%;
@@ -1490,4 +1512,7 @@ top: 22%;
 #t14{
     top: 2%;
     left: 55%;
+}
+#cboxContent {
+  background: #ecf2ee;
 }

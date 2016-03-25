@@ -1,40 +1,45 @@
 define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquery.colorbox-min","draggableimg", "scrollreveal", "slick.min" ,"jquery.scrollTo.min"], function($) {
   $(function(){
       var mode = 'd', offset = 100, win = {w: 0, h: 0}, can, hdc, img_scale=1, $curfloor, curfloor =0;
-      
+
       $(document).ready(function() {
 
 
         function showVideo(){
           $('#videoOverlay, #videoLb').fadeIn(400, function(){
-            //if(player) player.play();  
+            //if(player) player.play();
           });
         }
         function hideVideo(){
           $('#videoOverlay, #videoLb').fadeOut(400, function(){
-            //if(player) player.pause();  
+            //if(player) player.pause();
           });
         }
         function lbox_init() {
           if ($(document).width() > 767) {
-            $(".ajax-lbox").colorbox({width:"80%", maxheight:"80%", maxWidth: 800, onComplete: lbox_onload});       
+            // $(".ajax-lbox").colorbox({width:"50%", maxheight:"80%", maxWidth: 800, onComplete: lbox_onload});
+            $(".ajax-lbox").colorbox({width:"600px", maxheight:"80%" });
           } else {
-            $(".ajax-lbox").colorbox({width:"95%", maxheight:"80%", maxWidth: 345, onComplete: lbox_onload});
+            // $(".ajax-lbox").colorbox({width:"90%", maxheight:"80%", maxWidth: 345, onComplete: lbox_onload});
+            $(".ajax-lbox").colorbox({width:"100%", height:"100%", maxheight:"80%" });
           }
         }
-        function lbox_onload(){
-          $('#cboxLoadedContent meta').remove();
-          $('#cboxLoadedContent script').remove();
-          if($(this).parents('.emoji:first').find('input[type=checkbox]').prop('checked')){
-            $('#cboxLoadedContent').find('.vote-btn input[type=checkbox]').prop('checked', true).siblings(".cbox-cover").toggleClass("sp-check sp-checked");;
-          }
+        // function lbox_onload(){
+        //   $('#cboxLoadedContent meta').remove();
+        //   $('#cboxLoadedContent script').remove();
+        //   if($(this).parents('.emoji:first').find('input[type=checkbox]').prop('checked')){
+        //     $('#cboxLoadedContent').find('.vote-btn input[type=checkbox]').prop('checked', true).siblings(".cbox-cover").toggleClass("sp-check sp-checked");;
+        //   }
 
-            $('#cboxLoadedContent .container').mCustomScrollbar();
-            ga('send', 'pageview', $(this).attr('href'));
-          
-        }
+        //     $('#cboxLoadedContent .container').mCustomScrollbar();
+
+        // }
+        //     $('#cboxLoadedContent .container').mCustomScrollbar();
+        //     ga('send', 'pageview', $(this).attr('href'));
+
+        // }
         function relayout(){
-            $('#spacer').css('paddingTop', win.h - $('#section1').height()); 
+            $('#spacer').css('paddingTop', win.h - $('#section1').height());
         }
 
         function drawPoly(coOrdStr, adjust)
@@ -63,7 +68,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
             if(window.location.hash) {
 
               var hash = window.location.hash;
-              
+
             }
             else{
               $(window).scrollTop(0);
@@ -91,7 +96,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
               $('#m_menu').fadeIn(200);
             }
             else{
-              $('#m_menu').fadeOut(200); 
+              $('#m_menu').fadeOut(200);
             }
           },
           showMall: function () {
@@ -107,7 +112,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
             //   prevArrow: '<a href="#" class="slick-prev"><span class="sp sp-lv-up"></span></a>',
             //   nextArrow: '<a href="#" class="slick-next"><span class="sp sp-lv-down"></span></a>'
             // });
-      
+
           },
           hideMall: function () {
               $('body').removeClass('showmall');
@@ -168,7 +173,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
               kc.resetHighlight();
               kc.highlight($curfloor.find('area.'+$(this).data('ref')), 1);
               });
-            
+
             }
             $(img).addClass('initialized');
         },
@@ -252,7 +257,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           e.preventDefault();
           if($(this).hasClass('dim')) return;
           var f = Math.min(curfloor-1, 3);
-          
+
           kc.goToFloor(f);
         });
 
@@ -270,17 +275,15 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           var href= $(this).attr('href');
           console.log($(href).position().top-offset);
           kc.scrollTo($(href).position().top-offset);
-          
+
         });
         $(".ajax-lbox").bind("click", function(e){
-          setTimeout(function(e){
             if ( $("body").find("#colorbox").length > 0 ) {
-              $("#cboxClose").append("<span class=\"sp sp-close\"></span>");
+              $("#cboxClose").append("<span class=\"sp-l sp-mall-close\"></span>");
             }
-          }, 0);
         });
-        
-        
+
+
         $(window).resize(function(){
           var w = $(window).width();
           win.h = $(window).height();
@@ -315,7 +318,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
                 $('#header').css('opacity', 1-p);
               }
               if(Math.abs(t) <= win.h * 1.2){
-                
+
                 $('#section1').css({
                   '-webkit-transform' : 'scale(' + Math.min(1.2, (0.2*p*1.8 + 1)) + ')',
                   '-moz-transform'    : 'scale(' + Math.min(1.2, (0.2*p*1.8 + 1)) + ')',
@@ -326,7 +329,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
                 $('#section1 .scroll-link').css('opacity', Math.max(0, 1-p*1.4));
               }
             });
-          } 
+          }
         }
         else{
           $(window).bind('scroll', function(){
