@@ -16,7 +16,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           });
         }
         function lbox_init() {
-          alert('yo');
+          // alert('yo');
           if (mode == 'd') {
              $(".ajax-lbox").colorbox({width:"100%", height:"80%", maxWidth: 800, onComplete: lbox_onload});
             //$(".ajax-lbox").colorbox({width:"600px", maxheight:"80%" });
@@ -26,7 +26,7 @@ define(["jquery", "jquery.mCustomScrollbar.min", "jquery.mousewheel.min", "jquer
           }
         }
         function lbox_onload(){
-          alert('loaded');
+          // alert('loaded');
           $('#cboxLoadedContent meta').remove();
           $('#cboxLoadedContent script').remove();
 
