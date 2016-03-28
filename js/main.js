@@ -34,6 +34,9 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
         function lbox_onload(){
           $('#cboxLoadedContent meta').remove();
           $('#cboxLoadedContent script').remove();
+          if(mode == 'd'){
+            $('#cboxLoadedContent').mCustomScrollbar();
+          }
           ga('send', 'pageview', $(this).attr('href'));
         }
         function relayout(){
