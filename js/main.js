@@ -308,6 +308,9 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
           kc.scrollTo($(href).position().top-offset);
 
         });
+        $('#m_nav a').bind('click', function(e){
+          kc.triggerMenu();
+        });
         // $(".ajax-lbox").bind("click", function(e){
         //     if ( $("body").find("#colorbox").length > 0 ) {
         //       $("#cboxClose").append("<span class=\"sp-l sp-mall-close\"></span>");
@@ -372,7 +375,7 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
         else{
           $(window).bind('scroll', function(){
             var t = document.body.scrollTop;
-            if(t >= win.h){
+            if(t >= win.h/2){
               if(!$('body').hasClass('sticky'))
                 $('body').addClass('sticky');
             }
