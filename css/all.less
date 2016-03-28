@@ -154,7 +154,7 @@ html, body{height: 100%;}
     .transition(none);
   }
   h1{
-    .text-shadow(~'0 0 10px #fbfcfd, 1px 1px 0 #fbfcfd');
+    .text-shadow(~'0 0 10px #fbfcfd,0 0 3px #fbfcfd, 1px 1px 0 #fbfcfd');
   }
 }
 .container{
@@ -238,7 +238,7 @@ header {
   }
 
 
-#pullright{
+.pullright{
   position: absolute;
   top: 40px;
   right: 0;
@@ -374,6 +374,7 @@ footer {
   margin-top: 115px;
   background: #ece7e4;
   border-top: 10px solid #d7e7e8;
+  overflow-x: hidden;
   .content{
     top: 0;
     left: 0;
@@ -1042,7 +1043,7 @@ img.map, map area{
   #logo-div {
     left: 35px;
   }
-  #pullright {
+  .pullright {
     right: 35px;
   }
   #credits .content {
@@ -1324,13 +1325,13 @@ img.map, map area{
     top: 15px;
     left: 20px;
   }
-    #m_menu .lang-div a, #pullright .lang-div a {
+    #m_menu .lang-div a, .pullright .lang-div a {
       border-radius: 20px;
       height: 33px;
       line-height: 33px;
       padding: 1px 12px 0;
     }
-  #pullright {
+  .pullright {
     top: 30px;
     right: 20px;
     .share {
@@ -1417,7 +1418,7 @@ img.map, map area{
     //   content: '';
     // }
     h1{
-      text-shadow: 0 0 20px rgba(255,255,255, 0.7);
+    //  text-shadow: 0 0 20px rgba(255,255,255, 0.7);
     }
     // h1, p, a{position: relative;}
     // margin-top: -270px;
@@ -1425,6 +1426,17 @@ img.map, map area{
       font-weight: 200;
       font-size: 13.5px;
       margin-bottom: 21px;
+    }
+  }
+  #section3{
+    .mall-btn{
+      padding-right: 10px;
+      .sp{
+        position: absolute;
+        top: 50%;
+        margin-top: -7px;
+        right: 30px;
+      }
     }
   }
   .lightbox-content {
