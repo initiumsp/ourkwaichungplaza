@@ -117,7 +117,7 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
           },
           showMall: function () {
             $('body').addClass('showmall');
-            $('#mallOverlay').fadeIn(400, function(){kc.goToFloor(0);});
+            $('#mallOverlay').fadeIn(400, function(){kc.goToFloor(0, 1);});
             // $('#mallContent .layers').slick({
             //   vertical: true,
             //   verticalSwiping: true,
@@ -205,7 +205,7 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
           hdc.clearRect(0, 0, can.width, can.height);
           $curfloor.find('.tips .on').removeClass('on');
         }
-        ,goToFloor: function(f){
+        ,goToFloor: function(f, b){
             var t = 0;
             curfloor = parseInt(f);
             if($('#current_floor').hasClass('active')){
@@ -215,6 +215,11 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
             setTimeout(function(){
 
               $('#current_floor').html($('#f'+f).html());
+              if(b){$('#mallOverlay .quickhelp').fadeIn();
+                setTimeout(function(){
+                  $('#mallOverlay .quickhelp').fadeOut();
+                }, 3000);
+              }
               setTimeout(function(){
                 $('#current_floor').addClass('active');
                 kc.fpinit();
@@ -264,20 +269,23 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
          $("body").delegate(".floor-link", "click", function(e){
           e.preventDefault();
           if(!$(this).hasClass('on'))
-          kc.goToFloor($(this).data('floor'));
+          kc.goToFloor($(this).data('floor'), 0);
+         }).delegate(".quickhelp", "click", function(e){
+          e.preventDefault();
+          $(this).fadeOut();
          });
         $("#levelup").bind("click", function(e){
           e.preventDefault();
           if($(this).hasClass('dim')) return;
           var f = Math.max(curfloor+1, 0);
-          kc.goToFloor(f);
+          kc.goToFloor(f, 0);
         });
         $("#leveldown").bind("click", function(e){
           e.preventDefault();
           if($(this).hasClass('dim')) return;
           var f = Math.min(curfloor-1, 3);
 
-          kc.goToFloor(f);
+          kc.goToFloor(f, 0);
         });
 
         $(".video-link").bind("click", function(e){
