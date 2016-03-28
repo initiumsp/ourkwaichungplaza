@@ -136,7 +136,7 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
           },
           fpinit: function (){
             // get the target image
-            var img = document.getElementById('floorplan');
+            var img = $('#mallOverlay .floorplan:eq(0)').get(0);
             if($(img).hasClass('initialized')) return;
             var x,y, w,h;
             var imgParent = img.parentNode;

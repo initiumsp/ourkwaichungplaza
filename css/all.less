@@ -339,7 +339,6 @@ header {
     left: 63.2%;
     width: 116px;
     height: 116px;
-    background: url(../images/d/enter-tc.png) no-repeat 0 0;
     overflow: hidden;
     text-indent: -9999px;
     z-index: 6;
@@ -352,6 +351,20 @@ header {
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
+  }
+}
+body.tc{
+  #scene{
+    .mall-btn{
+      background: url(../images/d/enter-tc.png) no-repeat 0 0;
+    }
+  }
+}
+body.sc{
+  #scene{
+    .mall-btn{
+      background: url(../images/d/enter-sc.png) no-repeat 0 0;
+    }
   }
 }
 body.loaded{
@@ -384,9 +397,7 @@ html.noscroll{
     animation-timing-function: ease-in-out;
   }
 }
-#floorplan {
-  cursor: pointer;
-}
+
 footer {
   background: #ece7e4;
   color: #2d2d2d;
@@ -654,6 +665,9 @@ input[type=checkbox], .cbox-cover {
     position: absolute;
     left: 50%;
     z-index: 11;
+  }
+  .floorplan {
+    cursor: pointer;
   }
   .layers .slick-slide{
     position: relative;
@@ -1067,7 +1081,7 @@ img.map, map area{
   }
   #current_floor{
     figure{
-      position: relative;
+      position: absolute;
       width: 1496px;
       margin: 0 auto;
     }
@@ -1712,7 +1726,7 @@ img.map, map area{
       // width: 114px;
     }
   }
-  #current_floor figure, #floorplan{
+  #current_floor figure, .floorplan{
     width: 748px;
   }
 }
