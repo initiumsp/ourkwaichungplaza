@@ -113,6 +113,7 @@ html, body{height: 100%;}
   margin: 40px auto;
   img {
     border: 5px solid #c3d1dc;
+    .box-sizing(border-box);
   }
   p {
     text-align: right;
@@ -1157,6 +1158,19 @@ img.map, map area{
   }
   #credits .content {
     padding: 50px 100px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  //tablet
+  #cboxClose{
+    top: 10px;
+    right: 10px;
+  }
+  #cboxLoadedContent .share{
+    margin-right: 50px;
+  }
+  #credits .content{
+    padding: 50px;
   }
 }
 @media screen and (max-width: 767px) {
