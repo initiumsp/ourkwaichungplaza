@@ -323,11 +323,34 @@ header {
   height: 100%;
   padding: 0; margin: 0;
   img{
-    max-width: 1800px;
     width: 100%;
     height: auto;
-    min-width: 375px;
     display: block;
+  }
+  .layer{
+    position: relative;
+    min-width: 375px;
+    max-width: 1800px;
+  }
+  .mall-btn{
+    position: absolute;
+    top: 31.8%;
+    left: 63.2%;
+    width: 116px;
+    height: 116px;
+    background: url(../images/d/enter-tc.png) no-repeat 0 0;
+    overflow: hidden;
+    text-indent: -9999px;
+    z-index: 6;
+    .border-radius(50%);
+    -webkit-animation-name: mall-animation;
+    animation-name: mall-animation;
+    -webkit-animation-duration: 1600ms;
+    animation-duration: 1600ms;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
   }
 }
 body.loaded{
@@ -854,6 +877,7 @@ img.map, map area{
   }
   #spacer{
     padding-top: 50%;
+    pointer-events: none;
   }
   header {
     position: absolute;
@@ -901,7 +925,7 @@ img.map, map area{
   }
   #scene{
     background: #dae8e9;
-    img{
+    .layer{
       min-width: 1300px;
     }
   }
@@ -1035,11 +1059,20 @@ img.map, map area{
     }
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1300px) {
 
-
+  #scene{
+    .layer{
+      margin-left: -200px;
+    }
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1055px) {
+  #scene{
+    .layer{
+      margin-left: -300px;
+    }
+  }
   #logo-div {
     left: 35px;
   }
@@ -1277,6 +1310,13 @@ img.map, map area{
   #scene{
     li{
       display: block;
+    }
+    .mall-btn{
+      width: 80px;
+      height: 80px;
+      top: 25%;
+      right: 17%;
+      .background-size(cover);
     }
   }
   #menu-btn{
@@ -1621,7 +1661,20 @@ img.map, map area{
   a{
     position: absolute;
     z-index: 2;
-
+    animation-name: floating;
+    -webkit-animation-name: floating;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    &.delay02{
+      animation-delay: 0.3s;
+      -webkit-animation-delay: 0.3s;
+    }
+    &.delay04{
+      animation-delay: 0.5s;
+      -webkit-animation-delay: 0.5s;
+    }
   }
 }
 //3/F
@@ -1686,4 +1739,102 @@ top: 22%;
 }
 #cboxContent {
   background: #ecf2ee;
+}
+@-webkit-keyframes mall-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(94, 118, 143, .2);
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    60% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    70% {
+        box-shadow: 0 0 0 0 rgba(94, 118, 143, .2);
+        -webkit-transform: scale(.98);
+        transform: scale(.98)
+    }
+    80% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    100% {
+        box-shadow: 0 0 .5em 1.6em rgba(94, 118, 143, 0);
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+@-moz-keyframes mall-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(94, 118, 143, .2);
+        -moz-transform: scale(1);
+        transform: scale(1)
+    }
+    60% {
+        -moz-transform: scale(1);
+        transform: scale(1)
+    }
+    70% {
+        box-shadow: 0 0 0 0 rgba(94, 118, 143, .2);
+        -moz-transform: scale(.98);
+        transform: scale(.98)
+    }
+    80% {
+        -moz-transform: scale(1);
+        transform: scale(1)
+    }
+    100% {
+        box-shadow: 0 0 .5em 1.6em rgba(94, 118, 143, 0);
+        -moz-transform: scale(1);
+        transform: scale(1)
+    }
+}
+@keyframes mall-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(94, 118, 143, .2);
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    60% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    70% {
+        box-shadow: 0 0 0 0 rgba(94, 118, 143, .2);
+        -webkit-transform: scale(.98);
+        transform: scale(.98)
+    }
+    80% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    100% {
+        box-shadow: 0 0 .5em 1.6em rgba(94, 118, 143, 0);
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0%);  
+  }
+  50% {
+    transform: translateY(8%);  
+  } 
+  100% {
+    transform: translateY(0%);
+  }     
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%);  
+  }
+  50% {
+    -webkit-transform: translateY(8%);  
+  } 
+  100% {
+    -webkit-transform: translateY(0%);
+  }     
 }
