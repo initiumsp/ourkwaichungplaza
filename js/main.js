@@ -329,6 +329,7 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
           if(window.location.hash) {
             // Fragment exists
             var hash = window.location.hash;
+            lbox_init();
             $('a.ajax-lbox[href="'+hash.substr(1)+'.html"]').first().click();
             history.pushState(null,null,'#');
           }
