@@ -18,6 +18,7 @@
 		<title>葵涌廣場：購物天堂裏的異類 | 端傳媒 Initium Media</title>
 		<meta name="description" content="在香港商場倒模複製鏈上，葵涌廣場堪稱特例，它其貌不揚，極少遊客光顧，在地產霸權蔓延的時代中，庇護着一些白手起家的創業夢，和主顧之間的人情味。">
 		<link rel="shortcut icon" href="https://d3rhr7kgmtrq1v.cloudfront.net/static/img/favicon.ico">
+		<link href="http://vjs.zencdn.net/5.0.0/video-js.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="./css/all.css" />
 		<script data-main="js/app" src="js/require.js"></script>
 		<script type="text/javascript">
@@ -41,7 +42,7 @@
 				<nav id="nav" class="desktop-only" role="navigation">
 					<a href="#spacer" class="scroll-link">首頁</a>
 					<a href="#section1" class="scroll-link">專題文章</a>
-					<a href="#section3" class="scroll-link">解構廣場</a>
+					<a href="#" class="mall-btn">解構廣場</a>
 					<a href="#credits" class="scroll-link">製作花絮</a>
 					<a href="#section1" class="video-link"><span class="sp sp-video"></span>360影片</a>
 				</nav>
@@ -59,13 +60,6 @@
         	<a href="#" id="menu_close"><span class="sp sp-close"></span>關閉目錄</a>
 			<div id="pullright">
 				<div class="lang-div"><a href="./sc" class="">簡</a></div>
-				<nav id="nav" class="desktop-only" role="navigation">
-					<a href="#spacer" class="scroll-link">首頁</a>
-					<a href="#section1" class="scroll-link">專題文章</a>
-					<a href="#section3" class="scroll-link">解構廣場</a>
-					<a href="#credits" class="scroll-link">製作花絮</a>
-					<a href="#section1" class="video-link desktop-only"><span class="sp sp-video"></span>360影片</a>
-				</nav>
 	        	<div class="share">
 		            <a href="https://twitter.com/share?url=http://dev.documentonready.com/kwai-chung-mall/&text=葵涌廣場：購物天堂裏的異類&via=initiumnews" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600'); return false;" id="twitter" class="tt-share">
 		            <img src="./images/twitter1.svg" onerror="this.onerror=null; this.src='./images/twitter1.png'" alt="Twitter" />
@@ -79,9 +73,9 @@
         	<div id="m_nav">
 				<a href="#spacer" class="scroll-link">首頁</a>
 				<a href="#section1" class="scroll-link">專題文章</a>
-				<a href="#section3" class="scroll-link">解構廣場</a>
+				<a href="#" class="mall-btn">解構廣場</a>
 				<a href="#credits" class="scroll-link">製作花絮</a>
-				<a href="#section1" class="video-link desktop-only"><img src="./images/m/m-360thumbnail.png" alt="360 video" width="142" height="80"/></a>
+				<a href="#section1" class="video-link"><img src="./images/m/m-360thumbnail.png" alt="360 video" width="142" height="80"/></a>
 			</div>
 		</nav>
         <header id="header">
@@ -172,7 +166,7 @@
 
 				<div id="section3" class="anim">
 					<img src="./images/banner.jpg" />
-					<a href="#" class="sq-btn mall-btn">解剖商場</a>
+					<a href="#" class="sq-btn mall-btn">解剖商場<span class="sp sp-link-arrow"></span></a>
 				</div>
 				<div class="anim content">
 					<p>事實上，按呎租計算，葵涌廣場的租金並不低廉。不願透明名字的法團代表介紹說，由於人流不絕，自開業至今，300呎的商鋪已經從約200多萬升至約2000多萬，商鋪租金也增幅迅猛。2014年，曾有媒體報導葵涌廣場旺鋪呎租高達800多元，相當於於尖沙咀的租金。</p>
@@ -228,7 +222,7 @@
       			<h2>製作花絮</h2>
       			<div class="makingof clearfix">
 	      			<div class="video-link-wrapper">
-						<a href="#" class="video-link">
+						<a href="#" class="video-link2">
 							<img src="http://placehold.it/440x240">
 						</a>
 					</div>
@@ -309,7 +303,10 @@
 		</div>
 		<div id="videoLb">
 			<div class="video">
-	            <iframe id="video_1" src="https://www.youtube.com/embed/7uUCmiyUHdE" frameborder="0" allowfullscreen></iframe>
+				<iframe id="video_1" src="about:blank" frameborder="0" allowfullscreen></iframe>
+	            <video id="video_2" class="video-js" data-v720="./video/shopping_Mall_v02_re_s.mp4" data-v1080='./video/shopping_Mall_v02_re.mp4'>
+		                  <source src=""  type="video/mp4">
+	             </video>
              </div>
 		</div>
 		<!-- 3/F -->

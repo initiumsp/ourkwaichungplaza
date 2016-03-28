@@ -12,6 +12,7 @@ article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{d
 .transform(@p){-webkit-transform: @p;-moz-transform: @p;-ms-transform: @p;transform: @p;}
 .box-sizing(@p){-webkit-box-sizing: @p; -moz-box-sizing: @p; box-sizing: @p;}
 .border-radius(@p){-webkit-border-radius: @p;-moz-border-radius: @p;border-radius: @p;}
+.text-shadow(@p){-webkit-text-shadow: @p;-moz-text-shadow: @p;text-shadow: @p;}
 .cf:before,
 .cf:after {
     content: " "; /* 1 */
@@ -128,6 +129,7 @@ html, body{height: 100%;}
   font-weight: bold;
 }
 .sq-btn{
+  position: relative;
   background: #fff;
   border: 2px solid @orange;
   color: @orange;
@@ -150,6 +152,9 @@ html, body{height: 100%;}
     padding-bottom: 50px;
     display: block;
     .transition(none);
+  }
+  h1{
+    .text-shadow(~'0 0 10px #fbfcfd, 1px 1px 0 #fbfcfd');
   }
 }
 .container{
@@ -556,12 +561,18 @@ input[type=checkbox], .cbox-cover {
       height: 100%;
     }
   }
-  #video_1{
+  #video_1, #video_2{
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: -1;
+    visibility: hidden;
+    &.active{
+      z-index: 1;
+      visibility: visible;
+    }
   }
 }
 #mallContent{
@@ -744,13 +755,19 @@ img.map, map area{
   .sp-lb-close {
       width: 44px;
       height: 44px;
-      background-position: -128px -209px;
+      background-position: -224px -177px;
+  }
+
+  .sp-link-arrow {
+      width: 27px;
+      height: 18px;
+      background-position: -224px -157px;
   }
 
   .sp-scrolldown {
       width: 27px;
       height: 12px;
-      background-position: -224px -157px;
+      background-position: -128px -223px;
   }
 
   .sp-tip {
@@ -768,7 +785,7 @@ img.map, map area{
   .sp-video {
       width: 66px;
       height: 34px;
-      background-position: -224px -177px;
+      background-position: -157px -223px;
   }
 
   .tips a:hover, a.on{
@@ -823,7 +840,17 @@ img.map, map area{
       margin-bottom: 15px;
     }
   }
-
+  #section3{
+    .sq-btn{
+      padding-right: 15px;
+      .sp{
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        margin-top: -9px;
+      }
+    }
+  }
   #spacer{
     padding-top: 50%;
   }
@@ -1271,7 +1298,7 @@ img.map, map area{
       text-align: center;
       color: #48596a;
     }
-    .scroll-link {
+    #m_nav a {
       font-size: 17px;
       letter-spacing: 1px;
       padding-top: 7px;
