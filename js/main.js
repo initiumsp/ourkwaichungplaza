@@ -69,7 +69,6 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
           loaded: function(){
             $(window).trigger('resize');
             if(window.location.hash) {
-
               var hash = window.location.hash;
 
             }
@@ -337,7 +336,7 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
             // Fragment exists
             var hash = window.location.hash;
             lbox_init();
-            $('a.ajax-lbox[href="'+hash.substr(1)+'.html"]').first().click();
+            $('a.ajax-lbox[href="'+decodeURIComponent(hash.substr(1))+'.html"]').first().click();
             history.pushState(null,null,'#');
           }
         });
