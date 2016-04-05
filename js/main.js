@@ -336,7 +336,29 @@ define(["jquery", "md", "videojs", "jquery.mCustomScrollbar.min", "jquery.mousew
             // Fragment exists
             var hash = window.location.hash;
             lbox_init();
-            $('a.ajax-lbox[href="'+decodeURIComponent(hash.substr(1))+'.html"]').first().click();
+            file_name = decodeURIComponent(hash.substr(1));
+            if(file_name=="1") {
+              file_name = "內衣店";
+            }else if(file_name=="2") {
+              file_name = "日式時裝";
+            }else if(file_name=="3") {
+              file_name = "果汁";
+            }else if(file_name=="4") {
+              file_name = "玉器舖";
+            }else if(file_name=="5") {
+              file_name = "童裝";
+            }else if(file_name=="6") {
+              file_name = "美甲";
+            }else if(file_name=="7") {
+              file_name = "車仔麵";
+            }else if(file_name=="8") {
+              file_name = "銀器店";
+            }else if(file_name=="9") {
+              file_name = "霞姐改衣";
+            }else if(file_name=="10") {
+              file_name = "Yummy雪糕.html";
+            }
+            $('a.ajax-lbox[href="'+file_name+'.html"]').first().click();
             history.pushState(null,null,'#');
           }
         });
